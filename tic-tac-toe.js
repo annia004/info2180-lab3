@@ -5,12 +5,13 @@ window.onload = function() {
     var squares = game_board.children;
     // console.log(squares);
 
+    // creates board layout
     for(i = 0; i <= squares.length - 1; i++) {
-        squares[i].setAttribute("class", "square"); // creates board layout
+        squares[i].setAttribute("class", "square"); 
     }
     // console.log(squares);
 
-    var track = [];      // adds an X or O to a square when clicked
+    var track = [];      
     // console.log(track);
     
     let option1 = "X";
@@ -20,8 +21,20 @@ window.onload = function() {
 
     squares = document.querySelectorAll(".square")
     // squares = document.getElementsByClassName("square");
-    console.log(squares);
+    // console.log(squares);
 
+    // add hover class to squares
+    squares.forEach(square => {
+        square.onmouseover = function() {
+            square.classList.add("hover");
+        };
+
+        square.onmouseout = function() {
+            square.classList.remove("hover");
+        };
+    });
+
+    // adds an X or O to a square when clicked
     squares.forEach(square => {
         square.onclick = function() {
             // console.log("Clicked");
