@@ -59,6 +59,9 @@ window.onload = function() {
                 lastplayed = option1;
                 square.classList.add("X");
                 track.push(option1);
+
+                // disallow value from changing when once clicked
+                square.onclick = false;
             }
 
             else {
@@ -67,6 +70,8 @@ window.onload = function() {
                     lastplayed = option2;
                     square.classList.add("O");
                     track.push(option2);
+
+                    square.onclick = false;
                 }
 
                 else {
@@ -74,6 +79,8 @@ window.onload = function() {
                     lastplayed = option1;
                     square.classList.add("X");
                     track.push(option1);
+
+                    square.onclick = false;
                 }
             }
 
